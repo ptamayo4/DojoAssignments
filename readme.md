@@ -1,0 +1,1 @@
+This contains files for the projects to be done throughout my time at the bootcamp
