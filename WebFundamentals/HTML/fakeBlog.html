@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pat's Blog</title>
+        <meta name="description" content="The trials and tribulations of tenacious traveler">
+    </head>
+    <body>
+        <div class="intro">
+            <h1>Welcome to my Blog</h1>
+            <img src="http://az616578.vo.msecnd.net/files/2016/05/11/635986020673165225-265259556_global-travel-destinations.jpg" alt="Picture of big travel destinations">
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt nibh felis, sed sagittis metus rhoncus ut. Donec tincidunt,
+            neque vel venenatis facilisis, eros nisi iaculis massa, a interdum neque ante eu ante. Nunc tempus, eros nec sodales venenatis,
+            est diam ullamcorper ex, vel rhoncus tortor ante nec erat. Aliquam leo nunc, consequat in pellentesque id, ultrices sit amet tellus.
+            Praesent consectetur nunc in turpis facilisis, non dignissim metus auctor. Nam mollis ligula velit, eget interdum ex vehicula sed.
+            Suspendisse fringilla eros ex, efficitur sagittis massa eleifend a. Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Nunc hendrerit, ante sit amet fermentum pretium, tortor nulla cursus libero, quis consectetur erat purus
+            facilisis dolor.
+        </p>
+        <h2>Travel Tips</h2>
+        <ul>
+            <li>Only carry the cash you need for the day</li>
+            <li>Always carry an actual pocket-sized map in case your phone dies</li>
+            <li>Learn some local phrases such as "bathroom"!</li>
+        </ul>
+
+
+        <div class="trips">
+            <h2>Recent Travels</h2>
+            <p>Click city for flights</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Season</th>
+                        <th>Price</th>
+                        <th>Satisfaction(1-10)</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="seattle">
+                        <td><a href="https://www.google.com/flights/#search;f=LAX;t=SEA;d=2017-02-07;r=2017-02-14;q=flights+to+seattle">Seattle</a></td>
+                        <td>Winter</td>
+                        <td>$$$$</td>
+                        <td>10</td>
+                        <td>Loved the rain</td>
+                    </tr>
+                    <tr id="monterey">
+                        <td><a href="https://www.google.com/flights/#search;f=LAX;t=MRY;d=2017-02-10;r=2017-02-14;q=flights+to+monterey">Monterey</a></td>
+                        <td>Fall</td>
+                        <td>$$</td>
+                        <td>8</td>
+                        <td>Check out the aquarium</td>
+                    </tr>
+                    <tr id="frisco">
+                        <td><a href="https://www.google.com/flights/?hl=en&gl=us#search;f=LAX;t=SFO;d=2017-02-07;r=2017-02-11;q=flights+to+san+francisco">San Francisco</a></td>
+                        <td>Summer</td>
+                        <td>$$$</td>
+                        <td>9</td>
+                        <td>Uber changes everything</td>
+                    </tr>
+                    <tr id="vegas">
+                        <td><a href="https://www.google.com/flights/?hl=en&gl=us#search;f=LAX;t=SFO;d=2017-02-07;r=2017-02-11;q=flights+to+san+francisco">Las Vegas</a></td>
+                        <td>Spring</td>
+                        <td>$$$</td>
+                        <td>7</td>
+                        <td>I have a Craps addiction now</td>
+                </tbody>
+            </table>
+        </div>
+        <form>
+            <h3>Join my mailing list and decide where I go next!</h3>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="notify_yes">Update me on your travels!</label>
+            <input type="radio" id="notify_yes" name="notifications" value="yes">
+
+            <label for="notify_no">I'm just here to lurk</label>
+            <input type="radio" id="notify_no" name="notifications" value="no">
+
+            <p>Where should I go?
+                <select name="language">
+                    <option value="ny">New York</option>
+                    <option value="austin">Austin</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="denver">Denver</option>
+                    <option value="tokyo">Tokyo</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="sweepstakes">Check this box to enter my monthly sweepstakes and a chance to win a trip to London!</label>
+                <input type="checkbox" id="sweepstakes" name="sweepstakes" value="true">
+            </p>
+            <input type="submit" value="Submit">
+
+        </form>
+    </body>
+</html>

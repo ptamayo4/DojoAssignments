@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Registration Form</title>
+    </head>
+    <body>
+        <form action="somethingHappens.php" method="post">
+            <h1>My Registration Form</h1>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name">
+            <p></p> <!--I am sure this isn't the correct convention for a newline but it works -->
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name">
+            <p></p>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <p></p>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <p></p>
+
+            <label for="pw_confirm">Password Confirmation:</label>
+            <input type="password" for="pw_confirm" name="pw_confirm">
+            <p></p>
+
+            <label for="birthday">Birthday</label>
+            <input type="date" for="birthday" name="birthday">
+            <p></p>
+
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="gender" value="other">
+
+            <p>A short description about yourself:</p>
+            <textarea name="description"></textarea>
+
+            <p>Favorite Language
+                <select name="language">
+                    <option value="c++">C++</option>
+                    <option value="c#">C#</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                </select>
+            </p>
+
+            <p></p>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

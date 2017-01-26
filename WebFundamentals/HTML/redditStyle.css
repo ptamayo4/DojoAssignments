@@ -1,0 +1,44 @@
+#container{
+    height: 600px;
+    width: 1250px;
+    background-color: pink;
+    padding: 10px;
+}
+
+#topbar{
+    height: 80px;
+    width: auto;
+    background-color: green;
+}
+
+#sidebar{
+    width: 80px;
+    height: 495px;
+    background-color: black;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#mainsection{
+    height: 495px;
+    width: 1160px;
+    background-color: blue;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+#ad{
+    height: 5px;
+    width: 500px;
+    background-color: yellow;
+    display: inline-block;
+
+}
+
+.article{
+    width: 500px;
+    height: 100px;
+    background-color: white;
+    margin: 10px;
+    display: inline-block;
+}

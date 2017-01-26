@@ -1,0 +1,150 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    display: inline-block;
+}
+
+#container{
+    width: 1000px;
+    height: 875px;
+}
+#header{
+    width: 1000px;
+    height: 70px;
+    background: linear-gradient(#F2F3F0, white);
+}
+#header img{
+    width: 110px;
+    height: 65px;
+    margin-left: 10px;
+}
+#header h2{
+    margin: 25px 0px 0px 360px;
+    display: inline-block;
+    vertical-align: top;
+}
+#menubar ul{
+    border: 1px solid black;
+    width: 998px;
+    background-color: #F7F8F6;
+}
+#menubar li{
+    display: inline-block;
+    border-right: 1px solid black;
+    width:136px;
+    text-align: center;
+    height:35px;
+    padding: 0px;
+    line-height: 35px;
+}
+#body{
+    width: 1000px;
+    height: 770px;
+    padding: 0px;
+    background: radial-gradient(circle, #6E5964, #5A5272, #1A0B0F);
+}
+#top{
+    width:1000px;
+    height: 340px;
+}
+#top img{
+    margin: 9px 3px 0px 775px;
+    width:15px;
+    height:15px;
+    display:inline-block;
+    color: blue;
+}
+#bluetext{
+    color: lightblue;
+}
+#topleft{
+    vertical-align: top;
+    margin: 15px 0px 0px 25px;
+    background-color: grey;
+    width:520px;
+    height:290px;
+}
+#topleft img{
+    margin: 10px 0px 0px 10px;
+    width:500px;
+    height:270px;
+}
+#topright{
+    margin: 15px 0px 0px 25px;
+    width: 390px;
+    height: 290px;
+    background-color: white;
+}
+#topright h3{
+    width: 390px;
+    height: 35px;
+    line-height:35px;
+    background: linear-gradient(white,#868492,white);
+}
+#topright p{
+    margin: 20px 0px 0px 5px;
+    font-size: 14px;
+}
+#bottom{
+    width: 941px;
+    height: 410px;
+    margin-left: 25px;
+    list-style-position: inside;
+}
+#bottom ul{
+    padding: 0px;
+}
+
+#bottom li{
+    vertical-align: top;
+    padding: 0px;
+    width: 217px;
+    height: 410px;
+    display: inline-block;
+    background: linear-gradient(#99A6C1,white);
+    outline: 1px solid white;
+}
+.movedright{
+    margin-right: 20px;
+}
+#bottom h3{
+    width: 217px;
+    height: 35px;
+    line-height:35px;
+    text-align: center;
+    background: linear-gradient(white,#868492,white);
+    outline: 1px solid white;
+}
+#bottom img{
+    width: 217px;
+    height: 110px;
+}
+#bottom p{
+    margin: 3px;
+    font-size: 14px;
+}
+.customButton{
+    width:100px;
+    height:30px;
+    background-color: #5C729C;
+    color: white;
+    border: 3px solid #19090D;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 100px;
+    font-weight:900;
+}
+#b1{
+    margin-top: 50px;
+}
+#b2{
+    margin-top: 2px;
+}
+#b3{
+    margin-top: 18px;
+}
+#b4{
+    margin-top: 34px;
+}
