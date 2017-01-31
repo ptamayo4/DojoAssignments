@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery TestBench</title>
+        <link rel="stylesheet" type="text/css" href="jqStyle.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+        $(document).ready(function(){
+            $('#firstTitle').click(function(){
+                alert("Welcome to Patrick's jQuery TestBench! Press all the things!!!");
+            })
+            // $('h1').hide();
+            $('#hide_button').click(function(){
+                $('h1').hide(1000);
+            })
+            $('#show_button').click(function(){
+                $('h1').show(100);
+            })
+            $('#toggle_description').click(function(){
+                $('#toggleinfo').toggle();
+            })
+
+            //Look for slideLeft, diagonal, right
+            //Also don't be a jackass and make sure to hide element first
+            $('#slider').hide();
+            $('#sliderbutton').click(function(){
+                $('#slider').slideDown(1000)
+            });
+
+            // $("#upText").hide();
+            $('#slideUpButton').click(function(){
+                $('#upText').slideUp(1000)
+            });
+
+            $('#toggleButton').click(function() {
+                $('#toggledText').slideToggle(500)
+            });
+
+            $('#getFaded').click(function(){
+                $("body").fadeOut(1000, function(){ //spoopy
+                    $("body").fadeIn(1000);
+                });
+            })
+
+            $('#classAdder').click(function(){
+                $('button').addClass("redButton");
+            })
+
+            $('#classRemover').click(function(){
+                $('button').removeClass("redButton");
+            })
+
+            $('#newHeaderText').hide();
+
+            $('#challengerButton').hover(function(){
+                $('#newHeaderText').fadeIn(1000);
+                $('#firstTitle').before($('#newHeaderText'));
+            })
+            $('#get_sum').hover(function(){
+                $('#get_sum').fadeIn(2000);
+                $('#slideUpButton').after($('#get_sum_text'));
+            })
+
+            $('#derputton').click(function(){
+                $('button').append($('#derp'));
+            })
+
+            $('#htmlSwitcher').click(function(){
+                $('#initText').html( "<p>This is way cooler!!!</p>" );
+            })
+            $('#hide_all_images').click(function(){
+                $('img').attr("width", "0px");
+            })
+
+
+        });
+        </script>
+    </head>
+    <body>
+        <h1 id="firstTitle">Click me to get started!</h1>
+        <button id="hide_button">This will Hide the Header</button>
+        <button id="show_button">This will Show the Header (much faster transition)</button>
+        <button id="toggle_description">Click me for information about .toggle()</button>
+        <p id="toggleinfo">This is extra info about toggle</p>
+        <button id="sliderbutton">Click me to slide</button>
+        <h2 id="slider">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+        <p>Test</p>
+        <button id="slideUpButton">Now to see the slideUp</button>
+        <h2 id="upText"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+        <button id="toggleButton">Click to toggle the text back and forth</button>
+        <p id="toggledText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <button id="getFaded">GET FADED</button>
+        <h2 id="fadedText">This is gonna fade out</h2>
+        <button id="classAdder">Add redButton class</button>
+        <button id="classRemover">Remove redButton class</button>
+        <h1 id="newHeaderText">NEW CHALLENGER APPEARS!</h1>
+        <button id="challengerButton">What's happening?</button>
+        <button id="get_sum">get_sum</button>
+        <h1 id="get_sum_text">mehhhh?</h1>
+        <button id="derputton">DERP APPEND!!</button>
+        <img id="derp" src="Derp1.jpg" width=40px>
+        <button id="htmlSwitcher">HTML SWITCHER, watch below!</button>
+        <p id="initText">This is the inital HTML</p>
+        <button id="hide_all_images">hide images</button>
+
+
+
+    </body>
+</html>

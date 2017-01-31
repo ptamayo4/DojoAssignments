@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+
+            // $(document).ready(function(){ //Needed to initialize when document is fully loaded
+            //     $('#test').click(function(){ //First step is to grab the item we want to have a listener on and specify the type of listener
+            //         $('#test').css("background-color", "red"); //Then specify what we want to function to actually do
+            //         alert("You pressed a button!");
+            //     });
+            // });
+            // console.log("This is a test");
+            $(document).ready(function(){
+                $('button').click(function(){
+                    $('#myParagraph').text('see how I .text() works as a setter!');
+                })
+            })
+        </script>
+        
+    </head>
+    <body>
+        <p id='myParagraph'>This is my paragraph! </p>
+        <button> Click me to change the paragraph! </button>
+    </body>
+</html>
