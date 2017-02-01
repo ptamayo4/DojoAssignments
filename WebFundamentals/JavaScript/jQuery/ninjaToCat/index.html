@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja to Cat</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('img').click(function() {
+                var temp = $(this).attr('data-alt-src');
+                $(this).attr('data-alt-src',$(this).attr('src'))
+                $(this).fadeOut(200)
+                $(this).fadeIn(200)
+                $(this).attr('src',temp)
+            });
+        });
+    </script>
+    <body>
+        <div id="container">
+            <div id="canvas">
+                <h1>CAT TO NINJA!</h1>
+                <ul>
+                    <li><img src="cat0.png" data-alt-src="ninja0.png"></li>
+                    <li><img src="cat1.png" data-alt-src="ninja1.png"></li>
+                    <li><img src="cat2.png" data-alt-src="ninja2.png"></li>
+                    <li><img src="cat3.png" data-alt-src="ninja3.png"></li>
+                    <li><img src="cat4.png" data-alt-src="ninja4.png"></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

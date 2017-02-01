@@ -71,8 +71,9 @@
             })
             $('#hide_all_images').click(function(){
                 $('img').attr("width", "0px");
-            })
-
+            });
+            // var test = $( "input[type=checkbox][name=1]:checked" ).val();
+            console.log( $("#check1").val());
 
         });
         </script>
@@ -95,14 +96,19 @@
         <button id="classAdder">Add redButton class</button>
         <button id="classRemover">Remove redButton class</button>
         <h1 id="newHeaderText">NEW CHALLENGER APPEARS!</h1>
-        <button id="challengerButton">What's happening?</button>
-        <button id="get_sum">get_sum</button>
+        <button id="challengerButton">What's happening?(.before)</button>
+        <button id="get_sum">get_sum(.after)</button>
         <h1 id="get_sum_text">mehhhh?</h1>
         <button id="derputton">DERP APPEND!!</button>
         <img id="derp" src="Derp1.jpg" width=40px>
         <button id="htmlSwitcher">HTML SWITCHER, watch below!</button>
         <p id="initText">This is the inital HTML</p>
-        <button id="hide_all_images">hide images</button>
+        <button id="hide_all_images">hide images(.attr)</button>
+
+        <input class="binaryCheck" type="checkbox" id="check1" name="1" value="true">
+
+
+        <p>BINARY CHECK READER:</p>
 
 
 

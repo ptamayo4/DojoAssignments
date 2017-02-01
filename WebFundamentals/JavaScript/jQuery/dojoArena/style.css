@@ -1,0 +1,78 @@
+*{margin: 0px; padding: 0px;}
+div{
+      dotted red;
+    display: inline-block;
+}
+#container{
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    outline: 5px solid grey;
+    margin: 20px 0px 0px 20px;
+
+}
+.map{
+    z-index: 99;
+    width: 1000px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    display: none;
+    position: absolute;
+}
+.turtle{
+    z-index: 101;
+    width: 200px;
+    height: 300px;
+}
+h2{color: white;}
+#stage{
+    background: radial-gradient(black, white);
+    width: 1000px;
+    height: 500px;
+    display: block;
+    text-align: center;
+    background-size: 100% 100%;
+}
+#selectMenu{
+    width: 400px;
+    height: 150px;
+    background-color: grey;
+    margin: 140px auto;
+    z-index: 100;
+    border: 3px solid black;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+#selectMenu h2{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#selectMenu select{
+    margin: 20px 20px 0px 20px;
+    border-radius: 5px;
+}
+ul{
+    list-style: none;
+}
+li{
+        display: inline-block;
+}
+button{
+    width: 100px;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+#leftCharDisplay{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    margin: 200px 0px 0px -615px;
+}
+#rightCharDisplay{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    margin:200px 0px 0px 15px;
+}

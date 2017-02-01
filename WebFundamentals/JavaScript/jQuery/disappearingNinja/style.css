@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+li{
+    width: 225px;
+    height: 225px;
+    display: inline-block;
+    margin: 10px;
+    outline: 3px solid red;
+}
+img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+h2{margin-top: 20px}
+#container{
+    width:1000px;
+    height:800px;
+}
+#container{
+    padding: 10px 10px 0px 10px;
+    background-color: black;
+    text-align: center;
+}
+#container h2, h4{
+    color: red;
+}
+h4{
+    margin-bottom: 80px;
+}
+button{
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 10px;
+}

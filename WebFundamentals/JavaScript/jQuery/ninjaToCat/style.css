@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    margin-left: 50px;
+    text-align: center;
+    border: 3px solid black;
+    width: 300px;
+    height:450px;
+    background: linear-gradient(white, black);
+}
+li{
+    margin-bottom: 3px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+img{
+    outline: 2px solid black;
+}
+ul{
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+    list-style-type: none;
+}

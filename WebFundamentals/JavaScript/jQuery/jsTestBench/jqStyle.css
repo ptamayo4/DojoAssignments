@@ -7,3 +7,6 @@ button{
 #newHeaderText{
     color: red;
 }
+.binaryCheck{
+    display: inline-block;
+}

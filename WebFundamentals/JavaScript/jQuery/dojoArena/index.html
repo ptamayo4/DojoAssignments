@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOJO ARENA</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function(){
+
+                $('button').hover(function(){ //creates (background-image: url("dojo.jpg"))
+                    $("#stage").css("background-image", "url(" + $(this).attr("data-alt") + ".jpg)");
+                    $('#stage').css("background-size", "100% 100%"); //Took some fiddling, had to resize new images
+                }, function(){
+                    $('#stage').css("background-image", "none");
+                    $('#stage').css("background", "radial-gradient(black, white)");
+                });
+                $('button').click(function(){
+                    $("#stage").css("background-image", "url(" + $(this).attr("data-alt") + ".jpg)");
+                    $('#stage').css("background-size", "100% 100%");
+                    $('#selectMenu').html("<h2>SELECT YOUR FIGHTER!</h2><ul><li><select name='player1'><option value='donny'>Donatello</option><option value='leo'>Leonardo</option><option value='raphael'>Raphael</option><option value='mikey'>Michelangelo</option></select></li><li><select name='player2'><option value='donny'>Donatello</option><option value='leo'>Leonardo</option><option value='raphael'>Raphael</option><option value='mikey'>Michelangelo</option></select></li>");
+                })
+                $(document).on('change','select[name="player1"]', function(){
+                    console.log("Changing the select" + $(this).val());
+                    $('#leftCharDisplay').html("<img class='turtle' src='" + $(this).val() + ".png'>");
+                })
+                $(document).on('change','select[name="player2"]', function(){
+                    console.log("Changing the select" + $(this).val());
+                    $('#rightCharDisplay').html("<img class='turtle' src='" + $(this).val() + ".png'>");
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="stage">
+                <!-- <img id="dojo" class="map" src="dojo.jpg">
+                <img id="beach" class="map" src="beach.jpg">
+                <img id="earth" class="map" src="earth.jpg">
+                <img id="forest" class="map" src="forest.jpg">
+                <img id="matrix" class="map" src="matrix.jpg">
+                <img id="snow" class="map" src="snow.jpg"> -->
+
+                <!-- <img class="turtle" id="donny" src="raphael.png">
+                <img class="turtle" id="leo" src="leo.png">
+                <img class="turtle" id="raphael" src="raphael.png">
+                <img class="turtle" id="mikey" src="mikey.png"> -->
+
+                <div id="selectMenu">
+                    <h2>SELECT YOUR STAGE!</h2>
+                    <ul>
+                        <li><button data-alt="dojo">Dojo</button></li>
+                        <li><button data-alt="beach">Beach</button></li>
+                        <li><button data-alt="earth">Earth</button></li>
+                    </ul>
+                    <ul>
+                        <li><button data-alt="forest">Forest</button></li>
+                        <li><button data-alt="matrix">Matrix</button></li>
+                        <li><button data-alt="snow">Snow</button></li>
+                    </ul>
+                </div>
+                <div id="leftCharDisplay"></div>
+                <div id="rightCharDisplay"></div>
+            </div>
+        </div>
+    </body>
+</html>
