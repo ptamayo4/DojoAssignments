@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    </head>
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                if($('#first_name').val() === "" ||  $('#last_name').val() === "" || $('#email').val() === "" || $('#phone').val() === "" ){
+                    alert("You are missing information, try again.")
+                    return false;
+                }
+                $('#users').after("<tr><td>" + $('#first_name').val() + "</td><td>" + $('#last_name').val()
+                                + "</td><td>" + $('#email').val() + "</td><td>" + $('#phone').val());
+                return false;
+            });
+        });
+    </script>
+    <body>
+        <div id="container">
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact#</th>
+                </tr>
+                <tbody id="users">
+                </tbody>
+            </table>
+
+            <h1>Add User</h1>
+            <form>
+                <ul>
+                    <li>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" id="first_name" name="first_name">
+                    </li>
+                    <li>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" id="last_name" name="last_name">
+                    </li>
+                    <li>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="phone">Contact No.:</label>
+                        <input type="text" id="phone" name="email">
+                    </li>
+                    <li><button id="addUser">Add User</li>
+                </ul>
+            </form>
+        </div>
+    </body>
+</html>

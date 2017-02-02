@@ -9,18 +9,18 @@
             $(document).ready(function(){
 
                 $('button').hover(function(){ //creates (background-image: url("dojo.jpg"))
-                    $("#stage").css("background-image", "url(" + $(this).attr("data-alt") + ".jpg)");
+                    $("#stage").css("background-image", "url(" + $(this).attr("data-alt") + ".jpg)");//Hover On and change css to new img
                     $('#stage').css("background-size", "100% 100%"); //Took some fiddling, had to resize new images
                 }, function(){
-                    $('#stage').css("background-image", "none");
+                    $('#stage').css("background-image", "none");//Hover off and change css back to gradient
                     $('#stage').css("background", "radial-gradient(black, white)");
                 });
-                $('button').click(function(){
+                $('button').click(function(){//Bug when initally clicked and not overwriting html. After writing new hmtl no problems
                     $("#stage").css("background-image", "url(" + $(this).attr("data-alt") + ".jpg)");
                     $('#stage').css("background-size", "100% 100%");
                     $('#selectMenu').html("<h2>SELECT YOUR FIGHTER!</h2><ul><li><select name='player1'><option value='donny'>Donatello</option><option value='leo'>Leonardo</option><option value='raphael'>Raphael</option><option value='mikey'>Michelangelo</option></select></li><li><select name='player2'><option value='donny'>Donatello</option><option value='leo'>Leonardo</option><option value='raphael'>Raphael</option><option value='mikey'>Michelangelo</option></select></li>");
                 })
-                $(document).on('change','select[name="player1"]', function(){
+                $(document).on('change','select[name="player1"]', function(){//.on to address dynamically created elements [new html above]
                     console.log("Changing the select" + $(this).val());
                     $('#leftCharDisplay').html("<img class='turtle' src='" + $(this).val() + ".png'>");
                 })
