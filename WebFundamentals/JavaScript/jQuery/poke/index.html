@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>POKEMANZ</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function(){
+
+                function stringBuilder(info){
+                    console.log(info);
+                    html_str = "<h2 id='name'>" + info.name + "</h2>"
+                    html_str += "<h3>Types</h3>"
+                    html_str += "<ul>"
+                    for(var i = 0; i < info.types.length; i++){
+                        html_str += "<li class='formattedHTML'>" + info.types[i].name + "</li>";
+                    }
+                    html_str += "</ul>";
+                    html_str += "<h3>Height</h3>"
+                    html_str += "<p class='formattedHTML'>" + info.height + "</p>"
+                    html_str += "<h3>Weight</h3>"
+                    html_str += "<p class='formattedHTML'>" + info.weight + "</p>"
+                    return html_str;
+                }
+
+                for(var i = 1; i <= 151; i++){
+                    $('#viewer').append("<img class='pokemon' data-num='" + i + "' src='http://pokeapi.co/media/img/" + i + ".png'>")
+                }
+                $('.pokemon').hover(function(){
+                    $(this).css("opacity", "1");
+                }, function(){
+                    $(this).css("opacity", "0.3");
+                });
+
+
+                $('.pokemon').click(function(){
+                    var pokeNum = $(this).attr("data-num");
+                    $.get("http://pokeapi.co/api/v1/pokemon/" + pokeNum + "/", function(res){
+                        formattedHTML = stringBuilder(res);
+                        $('#screen').html("<img id='screenView'src='http://pokeapi.co/media/img/" + pokeNum + ".png'>");
+                        $('#infoPane').html(html_str);
+                    }, "json");
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <div id="viewer"></div>
+        <div id="pokedex">
+            <h3>Pokedex 9000</h3>
+            <div id="screen"></div>
+            <div id="infoPane"></div>
+        </div>
+
+    </body>
+</html>
