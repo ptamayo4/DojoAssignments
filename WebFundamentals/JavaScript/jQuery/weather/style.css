@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    padding: 20px;
+    width: 500px;
+    height: 500px;
+    outline: 1px dotted red;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

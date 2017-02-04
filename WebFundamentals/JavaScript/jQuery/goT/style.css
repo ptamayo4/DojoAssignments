@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+#container{
+    background: url("distressed.jpg");
+    background-size: 100% auto;
+    background-color: grey;
+    width: 1300px;
+    height: 700px;
+    padding: 20px;
+}
+ul{
+    text-align: center;
+}
+img{
+    width: 300px;
+    height: 180px;
+    border-radius: 10px;
+}
+li{
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}
+#houseDetails{
+    padding: 20px;
+    color: red;
+    width: 700px;
+    height: 380px;
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: black;
+    text-align: center;
+    border-radius: 10px;
+}
+.formatText{
+    opacity: 1;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

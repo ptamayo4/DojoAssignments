@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather Yo</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function(){
+                var apiKey = "0b12aeacd32e34626c98ce07fbbcdfd7";
+                var city;
+                $('form').submit(function(){
+                    city = $('#cityChooser').val();
+                    $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey, function(res){
+                        tempFar = 1.8 * (res.main.temp - 273) + 32;
+                        $('#container').append("<h2>" + city + "</h2><h3>Temperature:" + Math.round(tempFar) +  " degrees</h3>");
+                    }, "json");
+                    return false;
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <form>
+                <h2>Enter a city name to see the temperature!</h2>
+                <input id="cityChooser" type="text" name="city_name">
+                <!-- <button>Get Weather!</button> -->
+                <input type="submit" name="Submit">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Game of Thrones</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function(){
+                // $.get("http://www.anapioficeandfire.com/api/houses/362", function(res){
+                //     console.log(res);
+                // }, "json");
+
+                $('img').click(function(){
+                    var houseNum = $(this).attr("id");
+                    $.get("http://www.anapioficeandfire.com/api/houses/" + houseNum, function(res){
+                        console.log(res);
+                        var houseName = "<h1>" + res.name + "</h1>";
+                        var houseWords = "<h2 class='formatText'>Words: " + res.words + "</h2>";
+                        var titles = "<h2 class='formatText'>Titles: " + res.titles + "</h2>";
+                        var weaponsString = "<h3 class='formatText'>Ancestral Weapons: ";
+                        for(var i = 0; i < res.ancestralWeapons.length; i++){
+                            if(i === res.ancestralWeapons.length -1){
+                                weaponsString+= res.ancestralWeapons[i] + " "
+                            } else {
+                                weaponsString+= res.ancestralWeapons[i] + ", ";
+                            }
+                        }
+
+                        $('#houseDetails').html(houseName + houseWords + titles + weaponsString)
+                    })
+
+                });
+
+
+                // "http://www.anapioficeandfire.com/api/houses/15", BARATHEON
+                // "url": "http://www.anapioficeandfire.com/api/houses/229", LANNISTER
+                // "http://www.anapioficeandfire.com/api/houses/362", STARK
+                // "http://www.anapioficeandfire.com/api/houses/378", targARYEN
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <ul id="houseSigils">
+                <li><img id="362" src="stark.jpg" alt="#"></li>
+                <li><img id="378" src="targaryen.jpg" alt="#"></li>
+                <li><img id="229" src="lannister.jpg" alt="#"></li>
+                <li><img id="15" src="baratheon.png" alt="#"></li>
+            </ul>
+            <div id="houseDetails"></div>
+        </div>
+    </body>
+</html>

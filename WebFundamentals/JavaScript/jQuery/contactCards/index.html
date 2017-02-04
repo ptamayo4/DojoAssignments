@@ -11,7 +11,7 @@
         $(document).ready(function(){
             $('button').click(function(){
                 var description = "<h2>" + $('textarea').val() + "</h2>";
-                $('#rightCol').children().append('<li class="card" data-alt="' + description+ '"><h1>'+ $('#first_name').val() + " " + $('#last_name').val() + '</h1><p>Click for a description</p></li>');
+                $('#rightCol').children().append('<li class="card" data-alt="' + description + '"><h1>'+ $('#first_name').val() + " " + $('#last_name').val() + '</h1><p>Click for a description</p></li>');
             });
             $(document).on("click", ".card", function(){
                 var temp = $(this).html();
