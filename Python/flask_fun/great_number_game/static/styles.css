@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+#container{
+    margin-top: 100px;
+    width: 100% auto;
+    text-align: center;
+}
+h3{
+    margin-bottom: 20px;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: white;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+p{
+    padding-top: 80px;
+    font-size: 30px;
+}
+#green{
+    background-color: green;
+}
+#green_num{
+    padding-top: 0px;
+}

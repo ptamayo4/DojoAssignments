@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <div id="container">
+            <div id="center_box">
+                <form>
+                    <ul>
+                        <h2>Submitted Info</h2>
+                        <li>Name: {{name}}</li>
+                        <li>Location: {{location}}</li>
+                        <li>Favorite language: {{language}}</li>
+                        <li>Comment: {{comment}}</li>
+                    </ul>
+                </form>
+                <a href="/">Go Back</a>
+            </div>
+        </div>
+    </body>
+</html>

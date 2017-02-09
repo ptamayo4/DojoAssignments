@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/my_style_sheet.css')}}">
+    </head>
+    <body>
+        <h2>Sign up to become a ninja today!</h2>
+        <form action=''>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name">
+
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name">
+            <h3>Why do you want to be a ninja?</h3>
+            <textarea name="description" rows="8" cols="50"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+
+    </body>
+</html>

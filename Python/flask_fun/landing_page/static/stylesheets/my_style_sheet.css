@@ -1,0 +1,14 @@
+h1{
+    color:blue;
+}
+h2{
+    font-family: sans-serif;
+    color: blue;
+}
+form{
+width: 260px;
+height: 300px;
+}
+input{
+    margin-bottom: 10px;
+}

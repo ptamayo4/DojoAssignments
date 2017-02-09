@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Counter</title>
+    </head>
+    <body>
+        <p>Current Count:   {{session['current_count']}}</p>
+        <form action='/two' method='post'>
+            <input type="submit" value="Add Two">
+        </form>
+        <form action='/clear' method='post'>
+            <input type="submit" value="1337 Haxorz">
+        </form>
+    </body>
+</html>
