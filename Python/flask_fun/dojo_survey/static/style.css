@@ -26,10 +26,14 @@ li{
 }
 p{
     margin-bottom: 10px;
+    color: white;
 }
 a{
     border-radius: 5px;
     width: 200px;
     height: 60px;
     background-color: white;
+}
+h4{
+    color: red;
 }

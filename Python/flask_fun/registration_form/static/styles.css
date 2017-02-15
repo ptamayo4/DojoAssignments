@@ -1,0 +1,22 @@
+li{
+    list-style: none;
+    text-align: right;
+    padding: 5px 0px 5px 0px;
+}
+#errorbox{
+    width:290px;
+    height:280px;
+    outline: 1px dotted red;
+
+}
+#formbox{
+    width:290px;
+    height:200px;
+    outline: 1px dotted red;
+}
+.fail{
+    background-color: red;
+}
+.pass{
+    background-color: green;
+}

@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin-left: 0px;
+}
+#regbox{
+    width: 300px;
+    height: 500px;
+    outline: 1px dotted red;
+    text-align: center;
+}
+.align1{
+    margin-left: 60px;
+}
+.align2{
+    margin-left: 62px;
+}
+.align3{
+    margin-left: 93px;
+}
+.align4{
+    margin-left: 70px;
+}
+.align5{
+    margin-left: 11px;
+}

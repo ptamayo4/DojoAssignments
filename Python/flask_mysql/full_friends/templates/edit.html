@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Friend</title>
+    </head>
+    <body>
+        <h1>Edit {{friend[0]['first_name']}} {{friend[0]['last_name']}}</h2>
+        <form action='/friends/{{id}}' method='POST'>
+            <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+            <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+            <label for="occupation">Occupation:<input type="text" name="occupation" id="occupation"></label>
+            <input type="submit" value="Add">
+        </form>
+    </body>
+</html>

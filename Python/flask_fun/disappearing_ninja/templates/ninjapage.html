@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cowabunga!</title>
+    </head>
+    <body>
+        {% if not pic_id %}
+            <img src="{{ url_for('static', filename='img/tmnt.png') }}">
+        {% else %}
+            <img src="{{ url_for('static', filename='img/' + pic_id + '.jpg') }}">
+        {% endif %}
+    </body>
+</html>

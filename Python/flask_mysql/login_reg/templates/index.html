@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Log In!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    </head>
+    <body>'
+        {% if not session['name'] %}
+            <h1>Hello!</h2>
+        {% else %}
+            <h1>Hello   {{ session['name'] }}</h1>
+        {% endif %}
+        <h1>Log In</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ category }}">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/success" method="post">
+            Email:<input type="text" name="email">
+            Password:<input type="password" name="password">
+            <input type="submit" value="Log In">
+        </form>
+        <h2>or</h2>
+        <div id="regbox">
+            <h1>Register</h1>
+            <form action="/register" method="post">
+                <p>First Name:<input class="align1" type="text" name="first_name"></p>
+                <p>Last Name:<input class="align2" type="text" name="last_name"></p>
+                <p>Email:<input class="align3" type="text" name="email"></p>
+                <p>Password:<input class="align4" type="password" name="password"></p>
+                <p>Confirm Password:<input class="align5" type="password" name="confirm_password"></p>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </body>
+</html>

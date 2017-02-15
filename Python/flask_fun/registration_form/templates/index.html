@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+        <div id="errorbox">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div id="formbox" class="form-group">
+        <form action='/validate' method='POST'>
+            <li>Email:<input type="text" name="email"></li>
+            <li>First Name:<input type="text" name="first_name"></li>
+            <li>Last Name:<input type="text" name="last_name"></li>
+            <li>Password:<input type="password" name="password"></li>
+            <li>Confirm Password:<input type="password" name="password_confirm"></li>
+            <li><input type="submit" value="Submit"></li>
+        </div>
+    </body>
+</html>
