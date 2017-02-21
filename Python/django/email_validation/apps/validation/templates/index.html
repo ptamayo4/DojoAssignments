@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <form action="process" method="POST">
+            {% csrf_token %}
+            Email Address: <input type="text" name="email">
+            <input type="submit" value="Submit">
+        </form>
+        {% for email in emails %}
+            <p>{{email.email}}</p>
+        {% endfor %}
+    </body>
+</html>

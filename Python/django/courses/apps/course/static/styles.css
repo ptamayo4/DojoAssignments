@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+table
+{
+    width:700px;
+    text-align: left;
+}
+
+td
+{
+    white-space:nowrap;
+}

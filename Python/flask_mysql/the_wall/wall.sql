@@ -1,0 +1,1 @@
+delete from comments where message_id = 6

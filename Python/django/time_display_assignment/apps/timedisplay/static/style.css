@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    margin-bottom: 20px;
+}
+#container{
+    text-align: center;
+    margin-top: 20px;
+}
+#datetime_box{
+    padding-top: 30px;
+    width: 300px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: green;
+    border-radius: 10px;
+}

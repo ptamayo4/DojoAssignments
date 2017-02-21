@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    text-align: center;
+}
+
+
+li{
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    width: 180px;
+    height: 180px;
+    border: 3px solid green;
+    display: inline-block;
+    vertical-align: top;
+}
+#log{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 600px;
+    height: 300px;
+    border: 3px solid green;
+}
+#gold_count{
+    margin-left: -1300px;
+}
+.gold{
+    display: inline-block;
+}
+#log{
+    padding: 20px 0px 20px 20px;
+    text-align: left;
+    overflow-y: auto;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
