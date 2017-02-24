@@ -1,0 +1,28 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#regbox{
+    width:400px;
+    height:300px;
+    outline: 1px dotted red;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+#regbox p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#logbox{
+    width:400px;
+    height:300px;
+    outline: 1px dotted red;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+#logbox p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

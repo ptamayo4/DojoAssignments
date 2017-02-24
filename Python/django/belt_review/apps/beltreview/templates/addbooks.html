@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h2>Add a New Book Title and a Review</h2>
+        {% if messages %}
+            {% for message in messages %}
+                <h2 class="red">{{ message }}</h2>
+            {% endfor %}
+        {% endif %}
+        <form action="process" method="POST">
+            {% csrf_token %}
+            <p>Book Title:<input type="text" name="title"></p>
+
+            <!-- Add Choose from list functionality -->
+
+            <p>Author:<input type="text" name="author"></p>
+            <p>Review:<textarea rows=6 cols=30 name="review"></textarea></p>
+            <p>Rating:
+                <select name="rating">
+                    <option value=5>5</option>
+                    <option value=4>4</option>
+                    <option value=3>3</option>
+                    <option value=2>2</option>
+                    <option value=1>1</option>
+                </select>
+            </p>
+            <input type="hidden" name="curr_user" value={{request.session.id}}>
+            <input type="submit" value="Add Book and Review">
+            {% for book in books %}
+                <p>Title:{{book.title}}</p>
+                <p>Author:{{book.author.name}}</p>
+            {% endfor %}
+        </form>
+    </body>
+</html>

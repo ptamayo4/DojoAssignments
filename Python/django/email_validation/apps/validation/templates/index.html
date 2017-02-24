@@ -3,15 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <style media="screen">
+            .red{
+                color: red;
+            }
+        </style>
     </head>
     <body>
+        {% if messages %}
+            {% for message in messages %}
+            <h1 class = red>{{ message }}</h1>
+            {% endfor %}
+        {% endif %}
         <form action="process" method="POST">
             {% csrf_token %}
             Email Address: <input type="text" name="email">
             <input type="submit" value="Submit">
         </form>
-        {% for email in emails %}
-            <p>{{email.email}}</p>
-        {% endfor %}
     </body>
 </html>

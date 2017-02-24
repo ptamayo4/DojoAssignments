@@ -5,11 +5,13 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class EmailManager(models.Manager):
     def add_email(self, email):
+        error_msgs = []
         if EMAIL_REGEX.match(email):
-            print "Success"
-            Email_Addresses.emailManager.create(email=email)
+            user = Email_Addresses.emailManager.create(email=email)
+            return {"theuser": user}
         else:
-            return ("Invalid Format!")
+            error_msgs.append("Invalid Email Address")
+            return {"errors":error_msgs}
 
 class Email_Addresses(models.Model):
     email = models.CharField(max_length = 60)

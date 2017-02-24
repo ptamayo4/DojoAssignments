@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome</title>
+        {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'styles.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id="regbox">
+            {% if messages %}
+                {% for message in messages %}
+                    <h2 class="red">{{ message }}</h2>
+                {% endfor %}
+            {% endif %}
+            <h2>Register</h2>
+            <form method="POST" action="register">
+                {% csrf_token %}
+                <p>Name:<input type="text" name="name"></p>
+                <p>Alias:<input type="text" name="alias"></p>
+                <p>Email:<input type="text" name="email"></p>
+                <p>Password:<input type="password" name="password"></p>
+                <h5>Password should be at least 8 characters</h5>
+                <p>Confirm Password:<input type="password" name="confirm_password"></p>
+                <input type="submit" value="Register">
+            </form>
+            <h2>Users</h2>
+            {% for user in users %}
+                <p>User:{{user.name}}</p>
+                <p>Alias:{{user.alias}}</p>
+                <p>Email:{{user.email}}</p>
+            {% endfor %}
+            <h2>Books</h2>
+            {% for book in books %}
+                <p>Title:{{book.title}}</p>
+                <p>Author:{{book.author.name}}</p>
+                <p>{{book.created_at}}</p>
+            {% endfor %}
+            <h2>Authors</h2>
+            {% for author in authors %}
+                <p>Name:{{author.name}}</p>
+                <p>{{author.created_at}}</p>
+            {% endfor %}
+        </div>
+        <div id="logbox">
+            {% if messages %}
+                {% for message in messages.test %}
+                    <h2 class="red">{{ message }}</h2>
+                {% endfor %}
+            {% endif %}
+            <h2>Login</h2>
+            <form method="POST" action="login">
+                {% csrf_token %}
+                <p>Email:<input type="text" name="email"></p>
+                <p>Password:<input type="password" name="password"></p>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </body>
+</html>
