@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Button Fun</title>
+        <style>
+            .hovergreen{
+                background-color: green;
+            }
+            .blue{
+                background-color: blue;
+            }
+            .red{
+                background-color: red;
+            }
+        </style>
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function(){
+                $('#myButton').hover(function(){
+                    $('button').removeClass("blue")
+                    $('button').removeClass("red")
+                    $(this).addClass("hovergreen");
+                }, function(){
+                    $(this).removeClass("hovergreen");
+                    $('button').addClass("red")
+                });
+                $('#myButton').click(function(){
+                    if ($('button').hasClass("blue")){
+                        $('button').removeClass("blue")
+                        $('button').addClass("red")
+                    }
+                    else{
+                        $('button').removeClass("red")
+                        $('button').addClass("blue")
+                    }
+                    current = $('button').css("background-color");
+                })
+
+            });
+        </script>
+    </head>
+    <body>
+        <button id="myButton">PRESS</button>
+    </body>
+</html>

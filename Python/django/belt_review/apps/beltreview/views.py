@@ -9,6 +9,13 @@ def index(request):
     "users": User.userManager.all(),
     "authors": Author.objects.all()
     }
+    User.userManager.create(email='usertwo@usertwo.com',password='12345678',first_name='usertwo',last_name='lastname')
+    user = User.userManager.get(email='usertwo@usertwo.com')
+    Order.orderManager.create(user=user,s_fname='twouser',s_lname='thelastname',total=30000,status=1)
+
+    User.userManager.create(email='userthree@userthree.com',password='12345678',first_name='userthree',last_name='tlastname')
+    user = User.userManager.get(email='userthree@userthree.com')
+    Order.orderManager.create(user=user,s_fname='threeuser',s_lname='thelastname',total=30000,status=1)
     return render(request, 'index.html', context)
 
 def register(request):
@@ -67,7 +74,7 @@ def process(request):
 
 def logout(request):
     if request.method == 'POST':
-        if 'id' in request.session:
+        if 'auth' in request.session:
             del request.session['id']
             del request.session['alias']
             return redirect('/')
