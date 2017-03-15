@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>QuotingDojo</title>
+    </head>
+    <body>
+        <h2>Quotes</h2>
+        <% for(i in quotes){ %>
+            <h4>"<%= quotes[i].quote %>"</h4>
+            <p>  <%= quotes[i].user  %></p>
+        <%}%>
+    </body>
+</html>

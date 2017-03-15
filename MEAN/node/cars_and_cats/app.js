@@ -24,13 +24,13 @@ var server = http.createServer(function(request, response){
             response.end()
         });
     }
-    else if(request.url === '/images/fairlady.jpg'){
-        fs.readFile('./images/fairlady.jpg', function(errors, contents){
-            response.writeHead(200, {'Content-Type': 'image/jpg'});
-            response.write(contents);
-            response.end();
-        });
-    }
+    // else if(request.url === '/images/fairlady.jpg'){
+    //     fs.readFile('./images/fairlady.jpg', function(errors, contents){
+    //         response.writeHead(200, {'Content-Type': 'image/jpg'});
+    //         response.write(contents);
+    //         response.end();
+    //     });
+    // }
     else if(request.url === '/images/ferarri.jpg'){
         fs.readFile('./images/ferarri.jpg', function(errors, contents){
             response.writeHead(200, {'Content-Type': 'image/jpg'});

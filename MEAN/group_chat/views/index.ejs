@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Group Chat</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var socket = io.connect();
+                var user = prompt("Enter Your name:");
+                socket.emit('new_user', {name: user});
+
+                $('#form').submit(function(){
+                    var message = $('input').serializeArray()
+                    message = message[0].value
+                    socket.emit('new_message', {message: message, user:user});
+                    return false;
+                })
+
+                socket.on('server_response', function(data){
+                    $('#text_box').append('<h3>' + data.user + ": " + '</h3><p>' + data.message + '</p><br>')
+                })
+
+            })
+        </script>
+    </head>
+    <body>
+        <div id="text_box"></div>
+        <div>
+            <form id="form">
+                <input type="text" name="message">
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </body>
+</html>

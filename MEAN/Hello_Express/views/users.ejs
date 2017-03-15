@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h2>Here are all the users:</h2>
+        <% for (var i = 0; i < users.length; i++) { %>
+            <h3>Name: <%= users[i].name %></h3>
+            <h4>Email: <%= users[i].email %></h4>
+            <hr>
+        <% } %>
+        <h2>Add</h2>
+        <form action='/users' method='post'>
+            Name: <input type='text' name='name'>
+            Email: <input type='text' name='email'>
+            <input type='submit' value='create user'>
+        </form>
+        <form action="/users/1" method="get">
+            <button value="upvote">USER BUTTON</button>
+        </form>
+    </body>
+</html>

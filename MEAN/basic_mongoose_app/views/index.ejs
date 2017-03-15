@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            });
+        </script>
+    </head>
+    <body>
+        <h1>A Form</h1>
+        <form action="/users" method="post">
+            Name:<input type="text" name="name">
+            Age: <input type="number" name="age">
+            <input type="submit" value="Submit">
+        </form>
+        <% for(i in users){ %>
+            <p>Name: <%= users[i].name %> | Age: <%= users[i].age %></p>
+        <%}%>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>QuotingDojo</title>
+    </head>
+    <body>
+        <h2>Welcome to QuotingDojo</h2>
+        <form action="/quotes" method="post">
+            <p>Your Name: <input type="text" name="user"></p>
+            <p>Your Quote:</p>
+            <p><textarea name="quote" rows="8" cols="60"></textarea></p>
+            <p><input type="submit" value="Add my Quote"></p>
+        </form>
+        <form action="/quotes" method="get">
+            <input type="submit" value="Go to Quotes">
+        </form>
+    </body>
+</html>

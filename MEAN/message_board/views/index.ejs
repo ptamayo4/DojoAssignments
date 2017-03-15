@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Err Mah Gerd Message Berd</h1>
+        <form action="/message" method="post">
+            <p>Name: <input type="text" name="name"></p>
+            <p>Message:</p>
+            <p><textarea name="body" rows="8" cols="80"></textarea></p>
+            <input type="submit" value="Submit">
+        </form>
+        <% for(i in messages){ %>
+            <h3>Name: <%= messages[i].name %></h3>
+            <h3>Message: <%= messages[i].body %></h3>
+            <form action="/comment/<%= messages[i].id %>" method="post">
+                <p>Name: <input type="text" name="name"></p>
+                <p>Comment:</p>
+                <p><textarea name="body" rows="5" cols="40"></textarea></p>
+                <input type="submit" value="Submit Comment">
+            </form>
+            <% for(j in messages[i].comments){%>
+                <% if(messages[i].comments != undefined){ %>
+                    <h4><%= messages[i].comments[j].comment_name %></h4>
+                    <h4><%= messages[i].comments[j].comment_body %></h4>
+                <%}%>
+            <%}%>
+        <%}%>
+    </body>
+</html>

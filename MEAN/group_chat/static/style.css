@@ -1,0 +1,21 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#text_box{
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 600px;
+    margin-bottom: 10px;
+    height: 300px;
+    margin: 10px 0px 10px 10px;
+    overflow-y: scroll;
+}
+input{
+    margin-left: 10px;
+}
+
+h3, p{
+    display: inline-block;
+}
