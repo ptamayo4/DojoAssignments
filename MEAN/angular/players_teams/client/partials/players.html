@@ -1,0 +1,16 @@
+<h1>Players</h1>
+<form name="playerForm">
+    <p>Name <input type="text" name="name" ng-model="newPlayer.name" ng-minlength="3" required><input type="submit" value="Add Player" ng-click="create()"></p>
+</form>
+<div ng-messages="playerForm.name.$error">
+    <p ng-message="minlength">The player name is too short.</p>
+    <p ng-message="required">The player name is required.</p>
+</div>
+<table style="width:650px;text-align:left;">
+    <th>Name</th>
+    <th>Actions</th>
+    <tr ng-repeat="player in players">
+        <td>{{player.name}}</td>
+        <td><button type="button" ng-click="delete($index)">Remove Player</button></td>
+    </tr>
+</table>

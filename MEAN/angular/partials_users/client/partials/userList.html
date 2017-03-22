@@ -1,0 +1,11 @@
+<h2>User List</h2>
+<table style="width:600px;text-align:left;">
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Fav Language</th>
+    <tr ng-repeat="user in users">
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.fav_lang}}</td>
+    </tr>
+</table>

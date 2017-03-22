@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>For Your Health</title>
+        <script src='bower_components/angular/angular.js'></script>
+        <script type="text/javascript">
+            var app = angular.module('app',[]);
+            app.controller('foodController', function($scope){
+                $scope.foods = [
+                    {name: "Pizza"}
+                ]
+                $scope.addFood = function(){
+                    $scope.foods.push($scope.newFood);
+                    $scope.newFood = {};
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div ng-controller="foodController">
+            <form ng-submit='addFood()' ng-hide="searchQuery">
+                Favorite Food: <input type="text" ng-model="newFood.name">
+                <input type="submit" value="Add Food">
+            </form>
+            <p>Currently typing: <span ng-bind="newFood.name"></span></p>
+
+            Search:<input ng-model="searchQuery">
+            <p ng-repeat="food in foods | filter:searchQuery">{{food.name}}</p>
+            <div ng-if="searchQuery">
+                <h2>HELLO</h2>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+<!--
+
+ng-bind; ++
+ng-model; ++
+ng-repeat; ++
+ng-repeat (w/ filter); ++
+ng-if; ++
+ng-hide; ++
+ng-show; ++
+ng-init; ++
+ng-click, ++
+ng-submit ++
+
+-->

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="angular/angular.js" charset="utf-8"></script>
+        <script src="angular-route/angular-route.js" charset="utf-8"></script>
+        <script src="angular-messages/angular-messages.js" charset="utf-8"></script>
+        <script type="text/javascript">
+        var app = angular.module('app', ['ngRoute', 'ngMessages']);
+        app.config(function($routeProvider){
+            $routeProvider
+                .when('/players', {
+                    templateUrl: 'partials/players.html',
+                    controller: 'PlayersController'
+                })
+                .when('/teams', {
+                    templateUrl: 'partials/teams.html',
+                    controller: 'TeamsController'
+                })
+                .when('/associations', {
+                    templateUrl: 'partials/associations.html',
+                    controller: 'AssociationsController'
+                })
+                .otherwise({
+                    redirectTo: '/players'
+                });
+            });
+
+            app.factory('playerFactory', function(){
+                var players = [];
+                var factory = {};
+                factory.index = function(callback){
+                    callback(players);
+                }
+                factory.create = function(newPlayer){
+                    players.push(newPlayer);
+                }
+                factory.delete = function(index){
+                    players.splice(index,1);
+                }
+                return factory;
+            });
+
+            app.factory('teamFactory', function(){
+                var teams = [];
+                var factory = {};
+
+                factory.index = function(callback){
+                    callback(teams);
+                }
+                factory.create = function(newTeam){
+                    teams.push(newTeam);
+                }
+                factory.delete = function(index){
+                    teams.splice(index,1);
+                }
+                return factory;
+            });
+
+            app.factory('associationFactory', function(){
+                var associations = [];
+                var factory = {};
+
+                factory.index = function(callback){
+                    callback(associations)
+                }
+                factory.create = function(player,team){
+                    associations.push({"player": player, "team":team})
+                }
+                factory.delete = function(index){
+                    associations.splice(index,1)
+                }
+                return factory;
+            });
+
+            app.controller('PlayersController', ['$scope', 'playerFactory', function($scope, playerFactory){
+                playerFactory.index(function(data){
+                    $scope.players = data;
+                })
+                $scope.create = function(){
+                    playerFactory.create($scope.newPlayer);
+                    $scope.newPlayer = {};
+                }
+                $scope.delete = function(index){
+                    playerFactory.delete(index)
+                }
+            }]);
+
+            app.controller('TeamsController', ['$scope', 'teamFactory', function($scope, teamFactory){
+                teamFactory.index(function(data){
+                    $scope.teams = data;
+                })
+                $scope.create = function(){
+                    teamFactory.create($scope.newTeam);
+                    $scope.newTeam = {};
+                }
+                $scope.delete = function(index){
+                    teamFactory.delete(index)
+                }
+            }])
+
+            app.controller('AssociationsController', ['$scope', 'playerFactory', 'teamFactory', 'associationFactory', function($scope, playerFactory, teamFactory, associationFactory){
+                playerFactory.index(function(data){
+                    $scope.players = data;
+                })
+                teamFactory.index(function(data){
+                    $scope.teams = data;
+                })
+                associationFactory.index(function(data){
+                    $scope.associations = data;
+                })
+                $scope.create = function(){
+                    associationFactory.create($scope.newAssociation.player, $scope.newAssociation.team)
+                }
+                $scope.delete = function(index){
+                    $scope.associations.splice(index,1)
+                }
+
+            }]);
+// associations.html
+// angularController: AssociationsController
+// a) teamFactory b) playerFactory -->
+        </script>
+    </head>
+    <body>
+        <a href="#!/players">Players</a>
+        <a href="#!/teams">Teams</a>
+        <a href="#!/associations">Associations</a>
+        <div ng-view="">
+        </div>
+    </body>
+</html>

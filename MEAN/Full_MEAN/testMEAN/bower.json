@@ -1,0 +1,21 @@
+{
+  "name": "first_mean_app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Patrick Tamayo <ptamayo4@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ptamayo4/DojoAssignments",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3"
+  }
+}
